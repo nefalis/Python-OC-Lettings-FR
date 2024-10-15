@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Profile
 
 
-def profiles_index(request):
+def index(request):
     profiles_list = Profile.objects.all()
     context = {'profiles_list': profiles_list}
     return render(request, 'profiles/profiles_index.html', context)
