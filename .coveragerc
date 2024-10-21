@@ -1,0 +1,15 @@
+[run]
+source = 
+    oc_lettings_site
+    profiles
+    lettings
+
+
+omit = 
+    */tests/*
+    */migrations/*
+    */settings/*
+    */wsgi.py
+    */asgi.py
+    */__init__.py
+    env/*
