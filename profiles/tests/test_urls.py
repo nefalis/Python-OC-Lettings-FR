@@ -12,7 +12,6 @@ class ProfilesUrlsTests(SimpleTestCase):
         url = reverse('profiles:index')
         self.assertEqual(resolve(url).func, views.index)
 
-
     def test_profile_url(self):
         """
         Test that the profile URL resolves to the correct view.

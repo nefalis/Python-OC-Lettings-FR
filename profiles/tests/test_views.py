@@ -15,7 +15,6 @@ class ProfilesViewsTest(TestCase):
         self.profile1 = Profile.objects.create(user=self.user1, favorite_city='Paris')
         self.profile2 = Profile.objects.create(user=self.user2, favorite_city='London')
 
-
     def test_index_view(self):
         """
         Test that the index view works correctly.
@@ -28,7 +27,6 @@ class ProfilesViewsTest(TestCase):
         self.assertIn(self.profile1, profiles_list)
         self.assertIn(self.profile2, profiles_list)
 
-
     def test_index_view_no_profiles(self):
         """
         Test the index view when there are no profiles in the database.
@@ -37,11 +35,10 @@ class ProfilesViewsTest(TestCase):
         response = self.client.get(reverse('profiles:index'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'profiles/index.html')
-        
+
         # Verify that the profiles list is empty
         profiles_list = response.context['profiles_list']
         self.assertEqual(len(profiles_list), 0)
-
 
     def test_profile_view(self):
         """
@@ -54,7 +51,6 @@ class ProfilesViewsTest(TestCase):
         # Vérifie que les données de profil sont dans le contexte
         self.assertEqual(response.context['profile'].user.username, 'user1')
         self.assertEqual(response.context['profile'].favorite_city, 'Paris')
-
 
     def test_profile_detail_integration(self):
         """

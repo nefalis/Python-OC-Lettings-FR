@@ -1,6 +1,12 @@
 import os
-
 from pathlib import Path
+import sentry_sdk
+
+
+sentry_sdk.init(
+    dsn="https://da46eadee4309f6a45504a1ce7c40d44@o4507843819405312.ingest.de.sentry.io/4508182518497360",
+)
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent

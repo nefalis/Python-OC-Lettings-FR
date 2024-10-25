@@ -10,7 +10,6 @@ class LettingsURLsTests(TestCase):
         response = self.client.get(reverse('lettings:index'))
         self.assertEqual(response.status_code, 200)
 
-
     def test_non_existent_url(self):
         """
         Test that a non-existent URL returns a 404 status code.

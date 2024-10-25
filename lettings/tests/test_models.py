@@ -18,7 +18,6 @@ class AddressModelTest(TestCase):
             country_iso_code='FR'
         )
 
-
     def test_address_creation(self):
         """
         Test that an Address instance is created correctly.
@@ -26,7 +25,6 @@ class AddressModelTest(TestCase):
         address = Address.objects.get(id=self.address.id)
         self.assertEqual(str(address), '123 Rue de la plaine')
         self.assertEqual(address.city, 'Ailleurs')
-
 
     def test_invalid_number(self):
         """
@@ -43,7 +41,6 @@ class AddressModelTest(TestCase):
         with self.assertRaises(ValidationError):
             address.full_clean()
 
-
     def test_invalid_state_length(self):
         """
         Test that the state field requires exactly 2 characters.
@@ -58,7 +55,6 @@ class AddressModelTest(TestCase):
         )
         with self.assertRaises(ValidationError):
             address.full_clean()
-
 
     def test_invalid_country_code(self):
         """
@@ -92,7 +88,6 @@ class LettingModelTest(TestCase):
             address=self.address
         )
 
-
     def test_letting_creation(self):
         """
         Test that a Letting instance is created correctly.
@@ -100,7 +95,6 @@ class LettingModelTest(TestCase):
         letting = Letting.objects.get(id=self.letting.id)
         self.assertEqual(str(letting), 'Cozy Cottage')
         self.assertEqual(letting.address, self.address)
-
 
     def test_letting_invalid_title(self):
         """

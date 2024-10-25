@@ -12,7 +12,6 @@ class UrlsTests(TestCase):
         url = reverse('index')
         self.assertEqual(resolve(url).func, views.index)
 
-
     def test_lettings_url(self):
         """
         Test that the lettings URL includes the correct app's URLs.
@@ -20,7 +19,6 @@ class UrlsTests(TestCase):
         url = reverse('lettings:index')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-
 
     def test_profiles_url(self):
         """

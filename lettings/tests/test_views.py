@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from lettings.models import Letting, Address
 
+
 class LettingViewsTest(TestCase):
 
     def setUp(self):
@@ -18,7 +19,6 @@ class LettingViewsTest(TestCase):
             address=self.address
         )
 
-
     def test_index_view(self):
         """
         Test that the index view works correctly.
@@ -26,7 +26,6 @@ class LettingViewsTest(TestCase):
         response = self.client.get(reverse('lettings:index'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'lettings/index.html')
-
 
     def test_letting_view(self):
         """
@@ -37,7 +36,6 @@ class LettingViewsTest(TestCase):
         self.assertTemplateUsed(response, 'lettings/letting.html')
         self.assertEqual(response.context['title'], self.letting.title)
         self.assertEqual(response.context['address'], self.letting.address)
-
 
     def test_letting_detail_integration(self):
         """

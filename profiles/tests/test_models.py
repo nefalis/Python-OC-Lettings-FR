@@ -12,7 +12,6 @@ class ProfileModelTests(TestCase):
         self.user = User.objects.create_user(username='testuser', password='password123')
         self.profile = Profile.objects.create(user=self.user, favorite_city='Paris')
 
-
     def test_profile_creation(self):
         """
         Test the Profile model is correctly created.
@@ -20,7 +19,6 @@ class ProfileModelTests(TestCase):
         profile = Profile.objects.get(user=self.user)
         self.assertEqual(profile.favorite_city, 'Paris')
         self.assertEqual(profile.user.username, 'testuser')
-
 
     def test_profile_favorite_city(self):
         """
