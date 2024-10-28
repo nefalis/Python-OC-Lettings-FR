@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 logger = logging.getLogger(__name__)
 
+
 def index(request):
     """
     View function to render the index page.
