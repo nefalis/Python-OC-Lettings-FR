@@ -50,17 +50,11 @@ jobs:
           pip install pytest python-dotenv
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Test with pytest and check coverage
+      - name: Test with pytest and display coverage report
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: |
-          pytest --cov=./ --cov-report html --cov-fail-under=80
-
-      - name: Upload coverage report as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-report
-          path: htmlcov/
+          pytest --cov=./ --cov-report term --cov-fail-under=80
 
   containerize:
     needs: [build, test]
