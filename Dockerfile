@@ -2,7 +2,7 @@
 FROM python:3.10-alpine
 
 # Set working directory in container
-WORKDIR /app
+WORKDIR /oc-lettings
 
 # Copy the rest of the application into the container
 ADD . .
@@ -15,7 +15,7 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
 # Expose the port on which the application will run
-EXPOSE 8000
+EXPOSE 8080
 
 # Start the application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]

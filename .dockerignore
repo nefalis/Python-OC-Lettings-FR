@@ -4,3 +4,4 @@ env
 .env
 django_debug.log
 .pytest_cache
+.gitignore
