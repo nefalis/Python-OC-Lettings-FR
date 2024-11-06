@@ -11,8 +11,8 @@ ADD . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Create a non-root user and switch to that user
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-USER appuser
+# RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+# USER appuser
 
 # Expose the port on which the application will run
 EXPOSE 8080

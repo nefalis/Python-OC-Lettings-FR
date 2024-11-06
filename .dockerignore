@@ -1,7 +1,8 @@
 **/__pycache__
 *.pyc
 env
-.env
 django_debug.log
 .pytest_cache
 .gitignore
+Dockerfile
+README.md
