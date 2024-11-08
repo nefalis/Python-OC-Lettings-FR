@@ -7,6 +7,8 @@ WORKDIR /oc-lettings
 # Copy the rest of the application into the container
 COPY . .
 
+COPY static /oc-lettings/static
+
 # Install dependencies
 RUN pip install -r requirements.txt
 
