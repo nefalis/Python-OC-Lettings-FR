@@ -5,7 +5,7 @@ FROM python:3.10-alpine
 WORKDIR /oc-lettings
 
 # Copy the rest of the application into the container
-ADD . .
+COPY . .
 
 # Install dependencies
 RUN pip install -r requirements.txt
