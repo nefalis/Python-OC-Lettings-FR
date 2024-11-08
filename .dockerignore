@@ -6,3 +6,4 @@ django_debug.log
 .gitignore
 Dockerfile
 README.md
+staticfiles
