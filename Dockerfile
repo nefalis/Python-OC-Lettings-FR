@@ -10,19 +10,19 @@ ADD . .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Create a non-privileged user that the app will run under.
-ARG UID=10001
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "/nonexistent" \
-    --shell "/sbin/nologin" \
-    --no-create-home \
-    --uid "${UID}" \
-    appuser
+# # Create a non-privileged user that the app will run under.
+# ARG UID=10001
+# RUN adduser \
+#     --disabled-password \
+#     --gecos "" \
+#     --home "/nonexistent" \
+#     --shell "/sbin/nologin" \
+#     --no-create-home \
+#     --uid "${UID}" \
+#     appuser
 
-# Switch to the non-privileged user to run the application.
-USER appuser
+# # Switch to the non-privileged user to run the application.
+# USER appuser
 
 # Expose the port on which the application will run
 EXPOSE 8080
