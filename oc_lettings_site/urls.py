@@ -5,7 +5,7 @@ from .views import handler_404, handler_500
 
 
 handler404 = handler_404
-handler400 = handler_500
+handler500 = handler_500
 
 
 urlpatterns = [
