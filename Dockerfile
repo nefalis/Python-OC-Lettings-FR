@@ -23,13 +23,19 @@ RUN adduser \
     --uid "${UID}" \
     appuser
 
+# Create the log file and set permissions
+RUN mkdir -p /oc-lettings/staticfiles /oc-lettings/logs && \
+    touch /oc-lettings/logs/django_debug.log && \
+    chown -R appuser /oc-lettings/staticfiles /oc-lettings/logs && \
+    chmod -R 755 /oc-lettings/staticfiles /oc-lettings/logs
+
 # Switch to the non-privileged user to run the application.
 USER appuser
 
-# execute les migration et cree base de donnée
+# execute migration and create database
 RUN python manage.py migrate
 
-# permet de prendre les fichiers statics et les mettre dans staticfiles
+# allows you to take static files and put them in staticfiles
 RUN python manage.py collectstatic --noinput
 
 # Expose the port on which the application will run
