@@ -12,19 +12,19 @@ COPY static /oc-lettings/static
 # Install dependencies
 RUN pip install -r requirements.txt
 
-# # Create a non-privileged user that the app will run under.
-# ARG UID=10001
-# RUN adduser \
-#     --disabled-password \
-#     --gecos "" \
-#     --home "/nonexistent" \
-#     --shell "/sbin/nologin" \
-#     --no-create-home \
-#     --uid "${UID}" \
-#     appuser
+# Create a non-privileged user that the app will run under.
+ARG UID=10001
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
 
-# # Switch to the non-privileged user to run the application.
-# USER appuser
+# Switch to the non-privileged user to run the application.
+USER appuser
 
 # execute les migration et cree base de donnée
 RUN python manage.py migrate
