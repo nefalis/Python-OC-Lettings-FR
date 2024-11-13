@@ -147,11 +147,6 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
         },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'django_debug.log'),
-            'formatter': 'verbose',
-        },
         'sentry': {
             'class': 'sentry_sdk.integrations.logging.SentryHandler',
             'level': 'ERROR',
@@ -159,22 +154,22 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file', 'sentry'],
+            'handlers': ['console', 'sentry'],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django.request': {
-            'handlers': ['file', 'sentry'],
+            'handlers': ['sentry'],
             'level': 'ERROR',
             'propagate': False,
         },
         'lettings': {
-            'handlers': ['console', 'file', 'sentry'],
+            'handlers': ['console', 'sentry'],
             'level': 'DEBUG',
             'propagate': True,
         },
         'profiles': {
-            'handlers': ['console', 'file', 'sentry'],
+            'handlers': ['console', 'sentry'],
             'level': 'DEBUG',
             'propagate': True,
         },
