@@ -24,10 +24,8 @@ RUN adduser \
     appuser
 
 # Create the log file and set permissions
-RUN mkdir -p /oc-lettings/staticfiles /oc-lettings/logs && \
-    touch /oc-lettings/logs/django_debug.log && \
-    chown -R appuser /oc-lettings/staticfiles /oc-lettings/logs && \
-    chmod -R 755 /oc-lettings/staticfiles /oc-lettings/logs
+RUN mkdir -p /oc_lettings_site/staticfiles && \
+    chown -R appuser /oc_lettings_site/staticfiles
 
 # Switch to the non-privileged user to run the application.
 USER appuser
