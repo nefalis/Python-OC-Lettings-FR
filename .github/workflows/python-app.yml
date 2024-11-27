@@ -12,9 +12,7 @@ on:
 permissions:
   contents: read
 
-
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -76,12 +74,12 @@ jobs:
         env:
           COMMIT_HASH: ${{ github.sha }}
         run: |
-        # Tag the image with the commit hash
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/my-python-app:${COMMIT_HASH} .
+          # Tag the image with the commit hash
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/my-python-app:${COMMIT_HASH} .
 
-        # Tag the image as 'latest'
-        docker tag ${{ secrets.DOCKER_USERNAME }}/my-python-app:${COMMIT_HASH} ${{ secrets.DOCKER_USERNAME }}/my-python-app:latest
+          # Tag the image as 'latest'
+          docker tag ${{ secrets.DOCKER_USERNAME }}/my-python-app:${COMMIT_HASH} ${{ secrets.DOCKER_USERNAME }}/my-python-app:latest
 
-        # Push both the commit hash tag and the 'latest' tag
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-python-app:${COMMIT_HASH}
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-python-app:latest
+          # Push both the commit hash tag and the 'latest' tag
+          docker push ${{ secrets.DOCKER_USERNAME }}/my-python-app:${COMMIT_HASH}
+          docker push ${{ secrets.DOCKER_USERNAME }}/my-python-app:latest
