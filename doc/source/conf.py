@@ -10,6 +10,7 @@ project = 'OC Lettings'
 copyright = '2024, Orange County Lettings'
 author = 'Orange County Lettings'
 release = '1.0'
+master_doc = 'index'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

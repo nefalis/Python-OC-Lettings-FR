@@ -38,10 +38,6 @@ The project uses the following technologies and tools:
 - **Pytest, coverage**: Testing tools.
 
 
-
-
-
-
 Application Programming Interfaces (API)
 ----------------------------------------
 
@@ -50,12 +46,7 @@ Application Programming Interfaces (API)
    :maxdepth: 2
    :caption: Contents:
 
-   installation
-   quick_start
-   database
-   user_guide
-
-
-
-
-
+   source/installation
+   source/quick_start
+   source/database
+   source/user_guide

@@ -22,6 +22,7 @@ To install this project locally, follow these steps:
     env\Scripts\activate
 
 - Activate the virtual environment under Linux:
+
 .. code-block:: bash
 
     source venv/bin/activate
