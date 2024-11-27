@@ -7,3 +7,4 @@ django_debug.log
 Dockerfile
 README.md
 staticfiles
+.coverage
