@@ -35,6 +35,8 @@ The project uses the following technologies and tools:
 
 - **Sphinx**: Documentation generation.
 
+- **Pytest, coverage**: Testing tools.
+
 
 
 
