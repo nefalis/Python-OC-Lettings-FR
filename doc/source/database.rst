@@ -1,16 +1,27 @@
 Database and Model Structure
 ============================
 
-The main data models are:
+The data is stored on a SQLite3 database included in the Django project container.
+This document explains the database structure and the main models used in the project.
 
-1. **Profiles** :
+The project is divided into 2 applications :
+
+**Profiles** :
 
     - Description : Handles user profiles.
 
-2. **Lettings** :
+**Lettings** :
 
     - Description : Manages the letting listings.
 
-3. **OC_Lettings_Site** :
+
+
+
+**OC_Lettings_Site** :
 
     - Description : Contains the project settings and URL configurations.
+
+.. image:: _static/database.png
+    :alt: diagram of application
+    :width: 400px
+    :align: center

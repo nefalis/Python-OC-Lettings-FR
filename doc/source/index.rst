@@ -3,23 +3,22 @@ Orange County Lettings documentation
 ====================================
 
 
-
 .. image:: _static/oc_lettings.png
    :alt: image with logo oc lettings
    :width: 800px
    :align: center
-
-
+   :class: custom-img
 
 Présentation
 ------------
 
 The Orange County Lettings project is a property management application that allows users to view rental listings, manage profiles, and perform actions such as booking a property or contacting a landlord. The system also allows administrators to manage users, listings, and bookings.
 
+The live application can be accessed here: `Orange County Lettings <https://python-oc-lettings-fr-sry9.onrender.com/>`_.
 
 
 Technologies and languages ​​used
--------------------------------
+---------------------------------
 
 The project uses the following technologies and tools:
 
@@ -27,26 +26,27 @@ The project uses the following technologies and tools:
 
 - **Django**: Framework for backend web development.
 
-- **SQLite**: Database used by default.
-
 - **HTML, CSS, JavaScript**: Frontend technologies for the user interface.
 
 - **Docker**: Containerization of the application.
 
 - **Sphinx**: Documentation generation.
 
-- **Pytest, coverage**: Testing tools.
+- **Pytest, Coverage**: Testing tools.
 
+- **Sentry**: Manitoring site performance.
 
-Application Programming Interfaces (API)
-----------------------------------------
+- **Render**: Déployement on a public url.
 
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   source/installation
-   source/quick_start
-   source/database
-   source/user_guide
+   index
+   installation
+   quick_start
+   user_guide
+   database
+   quality
+   docker

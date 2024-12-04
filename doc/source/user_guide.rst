@@ -1,45 +1,65 @@
 User Guide
 ==========
 
-
 This guide explains how to use the main features of the application.
+
+
+Home
+----
+
+The Home page serves as the entry point to the application. It provides an overview of the platform, allowing users to easily navigate to key sections such as Profiles and Lettings.
+Quick links to navigate to user profiles and rental property listings.
+
+.. image:: _static/home.png
+    :alt: image home site
+    :width: 600px
+    :align: center
+    :class: custom-img
+
 
 Profiles
 --------
 
-1. Navigate to `/profiles/` to view a list of all user profiles.
+The Profiles section allows users to view user accounts.
+Click on a specific profile to view its details, including the name, email, and any related preferences.
 
-    - Example: You can find the profile of a user by clicking on their username.
 
-2. Navigate to `/profiles/<username>/` to view details of a specific profile.
+.. image:: _static/profile.png
+    :alt: image of listing profile
+    :width: 600px
+    :align: center
+    :class: custom-img
 
-    - Example: Replace `<username>` with the desired username in the URL.
+
+Each profile contains details about a specific user.
+
+
+.. image:: _static/detail_profile.png
+    :alt: image detail of profile
+    :width: 600px
+    :align: center
+    :class: custom-img
 
 
 Lettings
 --------
 
-1. Navigate to `/lettings/` to see all available rental properties.
-
-    - Example: You can browse properties and find details for a specific property.
-
-2. Navigate to `/lettings/<letting_id>/` for detailed information about a property.
-
-    - Example: Replace `<letting_id>` with the ID of the property.
+The Lettings section showcases all available rental properties. Users can browse through the listings and view detailed information about each property.
 
 
-Examples
---------
-
-- **Case 1: Viewing a Profile**
-
-    - URL: `/profiles/johndoe/`
-
-    - What you'll see: Detailed information about the user "johndoe".
+.. image:: _static/lettings.png
+    :alt: image of listing lettings
+    :width: 600px
+    :align: center
+    :class: custom-img
 
 
-- **Case 2: Checking a Letting**
+View detailed information about a property, such as its address, description, price, and amenities.
 
-    - URL: `/lettings/1/`
 
-    - What you'll see: Information about the rental property with ID 1.
+.. image:: _static/detail_lettings.png
+    :alt: image detail of lettings
+    :width: 600px
+    :align: center
+    :class: custom-img
+

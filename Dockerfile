@@ -29,7 +29,7 @@ RUN mkdir -p /oc-lettings/staticfiles && \
     chown -R appuser:appuser /oc-lettings/staticfiles && \
     chmod -R 755 /oc-lettings/staticfiles
 
-# Vérifiez les permissions pour déboguer
+# Check permissions to debug
 RUN ls -l /oc-lettings/staticfiles
 
 # Switch to the non-privileged user to run the application.
