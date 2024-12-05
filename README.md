@@ -13,6 +13,11 @@ Site web d'Orange County Lettings
 
 Dans le reste de la documentation sur le développement local, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
 
+
+La documentation concernant le développement de l'application est accessible via l'url: https://oc-lettings-project.readthedocs.io/en/latest/index.html
+
+Vous pouvez consulter l'application a l'adresse suivante : https://python-oc-lettings-fr-sry9.onrender.com/
+
 ### macOS / Linux
 
 #### Cloner le repository
