@@ -54,7 +54,7 @@ The Lettings section showcases all available rental properties. Users can browse
     :class: custom-img
 
 
-View detailed information about a property, such as its address, description, price, and amenities.
+View detailed information about a property, such as its address.
 
 
 .. image:: _static/detail_lettings.png

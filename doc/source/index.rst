@@ -9,10 +9,10 @@ Orange County Lettings documentation
    :align: center
    :class: custom-img
 
-Présentation
+Presentation
 ------------
 
-The Orange County Lettings project is a property management application that allows users to view rental listings, manage profiles, and perform actions such as booking a property or contacting a landlord. The system also allows administrators to manage users, listings, and bookings.
+The Orange County Lettings project is a property management application that allows users to view rental listings
 
 The live application can be accessed here: `Orange County Lettings <https://python-oc-lettings-fr-sry9.onrender.com/>`_.
 
@@ -34,7 +34,7 @@ The project uses the following technologies and tools:
 
 - **Pytest, Coverage**: Testing tools.
 
-- **Sentry**: Manitoring site performance.
+- **Sentry**: Monitoring site performance.
 
 - **Render**: Déployement on a public url.
 
@@ -43,10 +43,10 @@ The project uses the following technologies and tools:
    :maxdepth: 2
    :caption: Contents:
 
-   index
    installation
    quick_start
    user_guide
    database
    quality
    docker
+   programming_interfaces
