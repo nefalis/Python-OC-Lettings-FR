@@ -85,21 +85,21 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 Le déploiement de OC Lettings Site repose sur un pipeline CI/CD configuré avec GitHub Actions et Docker pour automatiser le processus de développement et de mise en production.
 
-Étapes principales du déploiement :
+### Étapes principales du déploiement :
 
 #### Déclenchement automatique :
-- Le pipeline est déclenché automatiquement lors d’un push ou d’une pull request sur les branches master et develop.
-- Le déploiement sur le serveur se fait uniquement à partir de la branche master après la réussite des tests.
+- Le pipeline est déclenché automatiquement lors d’un push ou d’une pull request sur les branches **master** et **develop**.
+- Le déploiement sur le serveur se fait uniquement à partir de la branche **master** après la réussite des tests.
 
 ### Phases du pipeline CI/CD :
 
 #### 1 -Build et vérification du code :
-- Les dépendances Python sont installées.
-- Des vérifications de style et de qualité (via flake8) sont effectuées.
+- Installation des dépendances Python à partir du fichier requirements.txt.
+- Vérifications de style et de qualité du code avec flake8.
 
 #### 2-  Exécution des tests unitaires :
-- Les tests unitaires sont exécutés avec pytest pour s’assurer que le projet est fonctionnel.
-- Un rapport de couverture de test est généré (et doit dépasser 80 % pour réussir).
+- Les tests unitaires sont exécutés avec pytest pour garantir la stabilité du projet.
+- Un rapport de couverture des tests est généré, et une couverture minimale de 80 % est exigée pour valider cette phase.
 
 #### 3- Containerisation de l'application :
 - Si les étapes précédentes réussissent, une image Docker est construite et taguée.
@@ -107,9 +107,41 @@ Le déploiement de OC Lettings Site repose sur un pipeline CI/CD configuré avec
 
 ### Configuration requise :
 
-- Un compte Docker Hub avec les identifiants configurés comme secrets (DOCKER_USERNAME et DOCKER_PASSWORD) dans le dépôt GitHub.
-- Une clé secrète pour l'application (SECRET_KEY) définie dans les secrets GitHub.
-- Un compte Render.
-- Un compte Docker Hub.
+- Un compte Render (https://render.com).
+- Un dépôt GitHub contenant le projet.
+- Les secrets suivants configurés dans GitHub Actions :
+
+    **SECRET_KEY** : clé secrète de l’application Django.
+
+    **DOCKER_USERNAME** et **DOCKER_PASSWORD** : identifiants pour Docker Hub.
+
 
 ### Étapes nécessaires pour effectuer le déploiement :
+#### 1. Connectez Render à votre dépôt GitHub
+- Allez sur **https://dashboard.render.com/**.
+- Cliquez sur **New +** > **Web Service**.
+- Sélectionnez votre projet dans la liste des dépôts GitHub et autorisez Render à accéder à votre compte si nécessaire.
+
+#### 2. Configurez le Web Service
+2.1 Configurez les options suivantes :
+- **Branch** : master.
+- **Start Command** : `gunicorn oc_lettings_site.wsgi:application`
+
+2.2 Dans Environment Variables  :
+- Ajoutez la variable d'environnement :
+
+   **NAME_OF_VARIABLE** : SECRET_KEY
+
+   **value** : <votre_clé_secrète>
+
+
+2.3 Cliquez sur **Deploy Web Service** pour lancer le déploiement.
+
+#### 3. Information projet
+Vous pouvez voir les détails de votre projet en étant sur le dashboard et en cliquant sur le nom du projet situé dans **Ungrouped Services**.
+
+Vous pourrez ainsi avoir l'URL généré pour le projet.
+
+Chaque fois que du code est poussé sur la branche master, Render reconstruira et redéploiera automatiquement l’application.
+
+En cas de problème, consultez les Logs dans le tableau de bord du projet.
