@@ -32,4 +32,3 @@ Each Letting is associated with an Address, detailing the number, street, city, 
     :alt: diagram of application
     :width: 400px
     :align: center
-

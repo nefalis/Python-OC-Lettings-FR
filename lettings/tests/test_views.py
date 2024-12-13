@@ -45,17 +45,13 @@ class LettingViewsTest(TestCase):
         url = reverse('lettings:letting', args=[self.letting.id])
         response = self.client.get(url)
 
-        # Vérifie le statut HTTP est correct
         self.assertEqual(response.status_code, 200)
 
-        # Vérifie le bon template est utilisé
         self.assertTemplateUsed(response, 'lettings/letting.html')
 
-        # Vérifie donnée du contexte
         self.assertEqual(response.context['title'], self.letting.title)
         self.assertEqual(response.context['address'], self.letting.address)
 
-        # Vérifie certaines parties du contenu HTML
         self.assertContains(response, self.letting.title)
         self.assertContains(response, self.letting.address.street)
         self.assertContains(response, self.letting.address.city)
